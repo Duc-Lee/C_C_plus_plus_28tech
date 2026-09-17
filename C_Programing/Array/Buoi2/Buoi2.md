@@ -1,5 +1,3 @@
-# Bài tập Mảng 1 chiểu - Buổi 2
-
 ## Bài 2. Mảng tăng.
 Kiểm tra xem mảng cho trước có tăng dần hay không, mảng tăng dần được định nghĩa là mảng có phần tử đứng sau lớn hơn phần tử đứng trước nó. Nếu mảng tăng dần in ra YES, trường hợp ngược lại in ra NO.
 
