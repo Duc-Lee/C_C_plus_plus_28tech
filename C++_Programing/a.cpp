@@ -1,26 +1,29 @@
-#include <stdio.h>
+#include <bits/stdc++.h>
+using namespace std;
 
-int max(int a,int b){
-    return a < b ? b : a;
-}
 int main(){
+  int t;
+  cin >> t;
+  while(t--){
     int n;
-    scanf("%d", &n);
-    int arr[n];
-    for (int i =0;i<n;i++){
-        scanf("%d", &arr[i]);
+    cin >> n;
+    // dung map de luu cac gia tri cua mang
+    map<long long,bool> a;
+    for(int i = 0;i<n;i++){
+      long long x;
+      cin >> x;
+      a[x] = true;
     }
-    int res = 0;
-    for(int i =0;i<n-1;i++){
-        if(arr[i]*arr[i+1] > res){
-            res = arr[i]*arr[i+1];
-        }
+    // in ra ket qua
+    for(int i = 0;i <n;i++){
+      // 
+      if(a[i]){
+        cout << i << " ";
+      }
+      else{
+        cout << -1 << " ";
+      }
     }
-    if (res > 0){
-        printf("%d", res);
-    }
-    else{
-        printf("0");
-    
-    }
+    cout << endl;
+  }
 }
