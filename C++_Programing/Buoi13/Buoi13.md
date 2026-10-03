@@ -98,18 +98,17 @@ int main() {
     v.push_back(8);
     v.push_back(10);
     // bay gio vector co dang la 2 4 6 8 10
-    // duyet vector 
-    // trong vector co 2 con tro dac biet do la begin() va end() 
-    // begin() la con tro tro den phan tu dau tien cua vector 
-    // end() la con tro tro den phan tu sau phan tu cuoi cung cua vector 
-    // auto la 1 khai bao bien ngam dinh, o day no ngam dinh kieu du lieu cua bien it la vector<int>::iterator ( toan tu pham vi)
-    // for(vector<int>::iterator it = v.begin(); it != v.end(); it++) 
-    //      cout << *it << " ";
-    // tuong duong voi 
+    // duyet vector  
     for(auto it = v.begin(); it != v.end(); it++) {
         // *it la lay gia tri cua vector tai vi tri con tro it tro den 
         cout << *it << " ";
     }
+    // Ta truy cap phan tu qua con tro 
+    // muon truy cap vao phan tu thu i ta dung *(v.begin() + i) hoac v[i]
+    cout << *(v.begin() + 1) << endl;
+    // Ta co the them phan tu vao vector bang con tro 
+    v.insert(v.begin() + 1, 3); // them phan tu 3 vao vi tri con tro it tro den 
+    // bay gio vector co dang la 2 3 4 6 8 10 
     return 0;
 }
 ```
