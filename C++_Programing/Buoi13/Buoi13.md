@@ -8,7 +8,13 @@
 ```cpp
         vector<kieu_du_lieu> ten_vector; 
         // vector co the khai bao kich thuoc ngay khi khai bao 
+        // khai bao ngoac [] la khai bao 1 mang cac vector
         vector<kieu_du_lieu> ten_vector[kich_thuoc];
+        // khai bao ngoac tron () la khai bao n vector 
+        vector<kieu_du_lieu> ten_vector(kich_thuoc);
+        // khi khi khai bao v(n) tuong duong a[n]
+        // khai bao ngoac tron () voi tham so thu 2 la gia tri khoi tao
+        vector<kieu_du_lieu> ten_vector(kich_thuoc, gia_tri_khoi_tao);
 ```
 - Ví dụ cụ thể : 
 ```cpp
@@ -26,10 +32,97 @@ int main() {
     // vector<int> v[10]; // khai bao vector 2 chieu
     // vector<vector<int>> v[10]; // khai bao vector 3 chieu
     // vector<vector<vector<int>>> v[10]; // khai bao vector 4 chieu
+    // khai bao vector da co san n phan tu 
+    // khi dung ngoac () no la 1 vector, con khi dung ngoac [] no la 1 mang cac vector
+    vector<int> v(10); // khai bao 10 vector
+    vector<int> v[10]; // khai bao vector 2 chieu
+    vector<vector<int>> v[10]; // khai bao vector 3 chieu
+    vector<vector<vector<int>>> v[10]; // khai bao vector 4 chieu
     return 0;
 }
 ``` 
-- Khai 
+- Ví dụ : 
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    // neu khong khai bao n 
+    vector <int> v;
+    // muon nhap cac so nguyen vo vector 
+    // ta phai tao bien 
+    for(int i = 0; i < n;i++){
+        int x; 
+        cin >> x;
+        // ta phai tao bien de nhap gia tri 
+        // sau khi nhap gia tri thi chen phan tu vo cuoi vector 
+        v.push_back(x);    
+    }
+    // neu muon khai bao co dinh vector v co n phan tu 
+    vector <int> v(n);
+    // khi do chi can nhap 
+    for(int i = 0; i < n;i++){
+        cin >> v[i];
+    }
+    // day la 2 cach nhap cac so nguyen vo vector 
+    // cach nay co the nhap duoc vector co gia tri ban dau
+    vector <int> v(n, 1); // khai bao n vector , moi vector co gia tri ban dau la 1 
+    // in ra ket qua 
+    for(int i = 0; i < n; i++){
+        // n = 3
+        // output : 1 1 1
+        cout << v[i] << " ";
+    } 
+    return 0;
+}
+
+- Ví dụ 2 : 
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    // khai bao vector kieu string 
+    vector <string> v;
+    // them cac phan tu vao vector
+    v.push_back("Hello");
+    v.push_back("World");
+    // in ra vector
+    for(int i = 0; i < v.size(); i++) {
+        // output : Hello World 
+        cout << v[i] << " ";
+    } 
+    // bai toan tach chuoi tu mot cau 
+    string s = "Dai hoc Bach Khoa Ha Noi";
+    // tach chuoi 
+    // sau khi cat se duuoc ("Dai","hoc","Bach","Khoa","Ha","Noi")
+    // do la cac phan tu khac nhau nen khi dua vao vector no se duoc cat 
+    stringstream ss(s);
+    // khai bao bien string de luu tam thoi khi cat chuoi 
+    string word;
+    // khai bao vector string de chua cac tu vua cat 
+    vector <string> v1;   
+    // cat chuoi duoc khoang trang
+    while(ss >> word){
+        // them chuoi vua cat vo vector
+        v1.push_back(word);   
+    }  
+    // output : 
+    // Dai 
+    // hoc 
+    // Bach 
+    // Khoa 
+    // Ha 
+    // Noi 
+    // dung for each 
+    for(string i : v1) {
+        cout << i << endl;
+    }   
+    return 0;
+}
+```
 
 ## 2. Mảng động `vector`
 - Bản chất `vector` thực chất là 1 lớp được cài đặt từ `array`, nó là 1 mảng động có thể thay đổi kích thước khi chương trình chạy
