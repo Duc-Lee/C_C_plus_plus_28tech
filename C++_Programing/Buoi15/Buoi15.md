@@ -385,7 +385,7 @@ int main(){
 } 
 ```
 
-- Ví dụ : Cho mảnng có n phần tử và số nguyên k, với mỗi cửa sổ của chiều dài k, tìm giá trị lớn nhất 
+- Ví dụ : Cho mảng có n phần tử và số nguyên k, với mỗi cửa sổ của chiều dài k, tìm giá trị lớn nhất 
 
 testcase 
 10 3
